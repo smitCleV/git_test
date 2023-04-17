@@ -12,5 +12,5 @@
 $theme-colors: map-merge($theme-colors, $my_new_colors);
 
 
-// $config: (a: (b: (c: d)));
-// @debug map.get($config, a, b, c); // d
+$config: (a: (b: (c: d)));
+@debug map.get($config, a, b, c); // d
