@@ -1,0 +1,35 @@
+@function tint-color($color, $weight) {
+    @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+    @return mix(black, $color, $weight);
+}
+
+// Shade the color if the weight is positive, else tint it
+@function shift-color($color, $weight) {
+    // @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
+}
+
+// ************************************************************
+$border-radius: .25rem;
+$border-width: 1px;
+
+.Subtract-fun {
+  // Output calc(.25rem - 1px) is valid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.Subtract-fun {
+  // Output the same calc(.25rem - 1px) as above
+  border-radius: subtract($border-radius, $border-width);
+}
+
+$border-radius: .25rem;
+$border-width: 0;
+
+.Subtract-fun {
+  // Output .25rem
+  border-radius: subtract($border-radius, $border-width);
+}

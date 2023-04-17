@@ -1,0 +1,16 @@
+@use 'sass:map';
+@each $state in map-keys($theme-colors) {
+    .alert-#{$state} {
+      --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+      --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+      --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
+    }
+}
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $my_new_colors);
+
+
+// $config: (a: (b: (c: d)));
+// @debug map.get($config, a, b, c); // d

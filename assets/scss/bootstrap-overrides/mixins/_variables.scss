@@ -1,0 +1,44 @@
+// my color name
+$purple_dark : #9926f0 !default;
+$pink_light :   #f026df !default;
+$guchu :    #8b0080 !default;
+$primary: #0014c5 !default;
+$danger: #8a0700 !default;
+$purple_light : #b85bff !default;
+$pink_dark : #68005f !default;
+$custom-color : #900 !default;
+
+$purple_d :   $purple_dark !default;
+$pink_l : $pink_light !default;
+
+$my_new_colors : (
+    'purple_light' : $purple_light,
+    'pink_dark' : $pink_dark,
+    "custom-color": $custom-color,
+    "guchu":        $guchu
+);
+
+$purple_light-text-emphasis:    shade-color($danger, 60%) !default;
+$guchu-bg-subtle:       tint-color($guchu, 80%) !default;
+$primary-border-subtle:   tint-color($guchu, 60%) !default;
+
+$my_theme-colors: (
+    'purple_d':     $purple_d,
+    'pink_l':       $pink_l
+);
+
+$accordion-icon-color-dark:         $primary !default;
+$accordion-icon-active-color-dark:  $primary !default;
+
+
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>");
+
+$accordion-icon-width:   2rem !default;
+
+$min-contrast-ratio:   3.5 !default;
+
+// do not support dark mode this variables
+// $enable-dark-mode : false;
+
+$color-mode-type: media-query;

@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+@import 'bootstrap';
+
+.test-text {
+    @include font-size(4rem);
+    background-color: tint-color(#bf82ee, 0)
+}
+
+.padding-div {
+    @include padding(2.5rem !important);
+}
+
+.media-div {
+    color: shade-color(#32fa00, 50);
+
+    .col {
+        @include media-breakpoint-up(lg) {
+            padding: rfs-fluid-value(2rem);
+            font-size: rfs-fluid-value(1.125rem);
+        }
+
+        & {
+            @include media-breakpoint-down(lg) {
+                padding: rfs-fluid-value(1rem);
+            }
+        }
+    }
+}
+
+@include color-mode(dark) {
+    .my-col {
+        color: var(--bs-primary-text-emphasis);
+        background-color: var(--bs-primary-bg-subtle);
+
+        @include color-scheme(dark) {
+            color: #fff;
+        }
+    }
+}
+
+.padding-div {
+    color: $gray-100;
+    background-color: $dark;
+}
+
+.test-fun {
+    background-color: shift-color(#e5ff00, 60);
+    color: color-contrast(shift-color(#e5ff00, 60));
+}
+
+.test-mixin {
+    @include color-scheme(light) {
+        color: #000;
+    }
+
+    @include color-scheme(dark) {
+        color: #fff;
+    }
+}
+
+.example-container {
+    @include make-container();
+    max-width: 800px;
+}
+
+
+.example-row {
+    @include make-row();
+}
+
+.example-content-main {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(8);
+    }
+}
+
+.example-content-secondary {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(4);
+    }
+    background-color: shade-color($primary, 40%);
+    // background-color: $primary;
+}
